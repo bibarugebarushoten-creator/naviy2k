@@ -5,7 +5,6 @@
       --cream: #fffde8;
       --ink: #111;
       --red: #e12b2b;
-      --purple: #9b7cff;
 
       width: 100%;
       max-width: 980px;
@@ -65,7 +64,6 @@
       width: 72px;
       height: 72px;
       object-fit: contain;
-      image-rendering: auto;
       transition: transform 0.18s ease;
     }
 
@@ -81,15 +79,13 @@
       color: var(--yellow);
       font-size: 12px;
       font-weight: 900;
-      line-height: 1.1;
+      line-height: 1.15;
       text-align: center;
       text-transform: lowercase;
-      letter-spacing: 0.2px;
       border-radius: 3px;
     }
 
     .ofgf-random-btn {
-      border: 0;
       font-family: inherit;
     }
 
@@ -104,14 +100,8 @@
     }
 
     @keyframes ofgfTwinkle {
-      from {
-        opacity: 0.35;
-        transform: translateY(0);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(-2px);
-      }
+      from { opacity: 0.35; transform: translateY(0); }
+      to { opacity: 1; transform: translateY(-2px); }
     }
 
     .ofgf-bottom-note {
@@ -185,28 +175,47 @@
     }
 
     @media (max-width: 760px) {
-      .ofgf-icon-row {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-      }
-
-      .ofgf-icon-btn {
-        min-height: 130px;
-      }
-
-      .ofgf-icon-btn img {
-        width: 62px;
-        height: 62px;
-      }
-    }
-
-    @media (max-width: 500px) {
       .ofgf-icon-nav {
         padding: 14px;
       }
 
       .ofgf-icon-row {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .ofgf-icon-btn {
+        min-height: 125px;
+        padding: 12px 8px 9px;
+      }
+
+      .ofgf-icon-btn img {
+        width: 58px;
+        height: 58px;
+      }
+
+      .ofgf-label {
+        font-size: 11px;
+        padding: 7px 5px;
+      }
+
+      .ofgf-random-btn {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .ofgf-icon-row {
+        gap: 10px;
+      }
+
+      .ofgf-icon-btn {
+        min-height: 118px;
+      }
+
+      .ofgf-icon-btn img {
+        width: 52px;
+        height: 52px;
       }
     }
   </style>
@@ -214,22 +223,22 @@
   <div class="ofgf-corner-sparkle">✦ ✧ ★ ✦</div>
 
   <div class="ofgf-icon-row">
-    <a class="ofgf-icon-btn" href="https://officialgf.com/category/recommendations/">
+    <a class="ofgf-icon-btn" href="https://officialgf.com/category/recommendations/" target="_top">
       <img src="https://officialgf.com/wp-content/uploads/2026/05/5f79d21158ff43a11d020b8b30e8c168.jpg" alt="recs">
       <span class="ofgf-label">recommends! ›</span>
     </a>
 
-    <a class="ofgf-icon-btn" href="https://officialgf.com/livehouse-map/">
+    <a class="ofgf-icon-btn" href="https://officialgf.com/livehouse-map/" target="_top">
       <img src="https://officialgf.com/wp-content/uploads/2026/05/2f5f5005556af548d1ee3804f087705f.jpg" alt="Live Music Guide">
       <span class="ofgf-label">live scene map and guide ›</span>
     </a>
 
-    <a class="ofgf-icon-btn" href="https://officialgf.com/about/">
+    <a class="ofgf-icon-btn" href="https://officialgf.com/about/" target="_top">
       <img src="https://officialgf.com/wp-content/uploads/2026/05/1d8558b5a5f6947071c3df4032904193.jpg" alt="Author">
       <span class="ofgf-label">author? ›</span>
     </a>
 
-    <a class="ofgf-icon-btn" href="https://officialgf.com/playlist/">
+    <a class="ofgf-icon-btn" href="https://officialgf.com/playlist/" target="_top">
       <img src="https://officialgf.com/wp-content/uploads/2026/04/picgifs-ipod-3447152.gif" alt="Playlist Page">
       <span class="ofgf-label">playlist page ›</span>
     </a>
@@ -243,7 +252,7 @@
   <div class="ofgf-random-result" id="ofgf-random-result"></div>
 
   <div class="ofgf-bottom-note">
-    ✧ find you next favorite! ✧
+    ✧ find your next favorite! ✧
   </div>
 
   <script>
@@ -261,7 +270,7 @@
       const result = document.getElementById("ofgf-random-result");
 
       result.style.display = "block";
-      result.innerHTML = `✦ Random pick: <a href="${pick.url}">${pick.title} →</a>`;
+      result.innerHTML = `✦ Random pick: <a href="${pick.url}" target="_top">${pick.title} →</a>`;
 
       ofgfSparkleBurst(event);
     }
