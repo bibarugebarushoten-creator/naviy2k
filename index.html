@@ -1,4 +1,5 @@
 <div class="ofgf-icon-nav">
+
   <style>
     .ofgf-icon-nav {
       --yellow: #fff83b;
@@ -36,15 +37,21 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+
       min-height: 145px;
       padding: 14px 10px 10px;
+
       background: var(--cream);
       border: 2px solid var(--ink);
       border-radius: 14px;
+
       box-shadow: 4px 4px 0 var(--ink);
-      color: var(--ink);
-      text-decoration: none;
-      transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+
+      transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease;
+
       cursor: pointer;
       overflow: hidden;
     }
@@ -65,6 +72,7 @@
       height: 72px;
       object-fit: contain;
       transition: transform 0.18s ease;
+      pointer-events: none;
     }
 
     .ofgf-icon-btn:hover img {
@@ -75,44 +83,61 @@
       width: 100%;
       margin-top: 10px;
       padding: 7px 6px;
+
       background: #111;
       color: var(--yellow);
+
       font-size: 12px;
       font-weight: 900;
       line-height: 1.15;
       text-align: center;
       text-transform: lowercase;
+
       border-radius: 3px;
+
+      pointer-events: none;
     }
 
     .ofgf-random-btn {
-      font-family: inherit;
+      border: 2px solid var(--ink);
     }
 
     .ofgf-corner-sparkle {
       position: absolute;
       top: 9px;
       right: 12px;
+
       font-size: 16px;
       letter-spacing: 5px;
+
       pointer-events: none;
+
       animation: ofgfTwinkle 1.2s infinite alternate;
     }
 
     @keyframes ofgfTwinkle {
-      from { opacity: 0.35; transform: translateY(0); }
-      to { opacity: 1; transform: translateY(-2px); }
+      from {
+        opacity: 0.35;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(-2px);
+      }
     }
 
     .ofgf-bottom-note {
       margin-top: 16px;
+
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
+
       font-size: 13px;
       font-weight: 900;
       letter-spacing: 0.5px;
+
       color: var(--ink);
       text-align: center;
     }
@@ -127,21 +152,27 @@
 
     .ofgf-random-result {
       display: none;
+
       margin-top: 14px;
       padding: 11px 13px;
+
       background: #111;
       color: #fff;
+
       border: 2px solid #111;
+
       box-shadow: 3px 3px 0 var(--red);
+
       font-size: 13px;
       font-weight: 800;
       text-align: center;
     }
 
-    .ofgf-random-result a {
+    .ofgf-random-link {
       color: var(--yellow);
-      font-weight: 900;
       text-decoration: underline;
+      cursor: pointer;
+      font-weight: 900;
     }
 
     .ofgf-click-sparkle {
@@ -155,11 +186,15 @@
 
     .ofgf-click-sparkle:before {
       content: "✦";
+
       position: absolute;
       left: -5px;
       top: -8px;
+
       font-size: 18px;
+
       color: var(--red);
+
       text-shadow: 1px 1px 0 #fff;
     }
 
@@ -168,13 +203,17 @@
         opacity: 1;
         transform: translate(0, 0) scale(0.4) rotate(0deg);
       }
+
       100% {
         opacity: 0;
         transform: translate(var(--x), var(--y)) scale(1.6) rotate(40deg);
       }
     }
 
+    /* MOBILE */
+
     @media (max-width: 760px) {
+
       .ofgf-icon-nav {
         padding: 14px;
       }
@@ -205,6 +244,7 @@
     }
 
     @media (max-width: 380px) {
+
       .ofgf-icon-row {
         gap: 10px;
       }
@@ -218,88 +258,227 @@
         height: 52px;
       }
     }
+
   </style>
 
-  <div class="ofgf-corner-sparkle">✦ ✧ ★ ✦</div>
-
-  <div class="ofgf-icon-row">
-    <a class="ofgf-icon-btn" href="https://officialgf.com/category/recommendations/" target="_top">
-      <img src="https://officialgf.com/wp-content/uploads/2026/05/5f79d21158ff43a11d020b8b30e8c168.jpg" alt="recs">
-      <span class="ofgf-label">recommends! ›</span>
-    </a>
-
-    <a class="ofgf-icon-btn" href="https://officialgf.com/livehouse-map/" target="_top">
-      <img src="https://officialgf.com/wp-content/uploads/2026/05/2f5f5005556af548d1ee3804f087705f.jpg" alt="Live Music Guide">
-      <span class="ofgf-label">live scene map and guide ›</span>
-    </a>
-
-    <a class="ofgf-icon-btn" href="https://officialgf.com/about/" target="_top">
-      <img src="https://officialgf.com/wp-content/uploads/2026/05/1d8558b5a5f6947071c3df4032904193.jpg" alt="Author">
-      <span class="ofgf-label">author? ›</span>
-    </a>
-
-    <a class="ofgf-icon-btn" href="https://officialgf.com/playlist/" target="_top">
-      <img src="https://officialgf.com/wp-content/uploads/2026/04/picgifs-ipod-3447152.gif" alt="Playlist Page">
-      <span class="ofgf-label">playlist page ›</span>
-    </a>
-
-    <button class="ofgf-icon-btn ofgf-random-btn" type="button" onclick="ofgfRandomPick(event)">
-      <img src="https://officialgf.com/wp-content/uploads/2026/05/389bf070cfba83b458d87508deb72681.jpg" alt="Random">
-      <span class="ofgf-label">random ›</span>
-    </button>
+  <div class="ofgf-corner-sparkle">
+    ✦ ✧ ★ ✦
   </div>
 
-  <div class="ofgf-random-result" id="ofgf-random-result"></div>
+  <div class="ofgf-icon-row">
+
+    <!-- RECS -->
+
+    <div
+      class="ofgf-icon-btn"
+      onclick="window.top.location.href='https://officialgf.com/category/recommendations/'"
+    >
+      <img
+        src="https://officialgf.com/wp-content/uploads/2026/05/5f79d21158ff43a11d020b8b30e8c168.jpg"
+        alt="recs"
+      >
+
+      <span class="ofgf-label">
+        recommends! ›
+      </span>
+    </div>
+
+    <!-- MAP -->
+
+    <div
+      class="ofgf-icon-btn"
+      onclick="window.top.location.href='https://officialgf.com/livehouse-map/'"
+    >
+      <img
+        src="https://officialgf.com/wp-content/uploads/2026/05/2f5f5005556af548d1ee3804f087705f.jpg"
+        alt="Live Music Guide"
+      >
+
+      <span class="ofgf-label">
+        live scene map and guide ›
+      </span>
+    </div>
+
+    <!-- ABOUT -->
+
+    <div
+      class="ofgf-icon-btn"
+      onclick="window.top.location.href='https://officialgf.com/about/'"
+    >
+      <img
+        src="https://officialgf.com/wp-content/uploads/2026/05/1d8558b5a5f6947071c3df4032904193.jpg"
+        alt="Author"
+      >
+
+      <span class="ofgf-label">
+        author? ›
+      </span>
+    </div>
+
+    <!-- PLAYLIST -->
+
+    <div
+      class="ofgf-icon-btn"
+      onclick="window.top.location.href='https://officialgf.com/playlist/'"
+    >
+      <img
+        src="https://officialgf.com/wp-content/uploads/2026/04/picgifs-ipod-3447152.gif"
+        alt="Playlist Page"
+      >
+
+      <span class="ofgf-label">
+        playlist page ›
+      </span>
+    </div>
+
+    <!-- RANDOM -->
+
+    <button
+      class="ofgf-icon-btn ofgf-random-btn"
+      type="button"
+      onclick="ofgfRandomPick(event)"
+    >
+      <img
+        src="https://officialgf.com/wp-content/uploads/2026/05/389bf070cfba83b458d87508deb72681.jpg"
+        alt="Random"
+      >
+
+      <span class="ofgf-label">
+        random ›
+      </span>
+    </button>
+
+  </div>
+
+  <!-- RANDOM RESULT -->
+
+  <div
+    class="ofgf-random-result"
+    id="ofgf-random-result"
+  ></div>
+
+  <!-- BOTTOM TEXT -->
 
   <div class="ofgf-bottom-note">
     ✧ find your next favorite! ✧
   </div>
 
   <script>
+
     const ofgfRandomLinks = [
-      { title: "All About Funk and City Pop", url: "https://officialgf.com/2025/04/10/japan-soul/" },
-      { title: "My Favorite Underrated Artist", url: "https://officialgf.com/2025/05/15/ako-japans-most-underrated-pop-artist-in-2025/" },
-      { title: "Faceless Singers", url: "https://officialgf.com/2025/08/07/faceless-singers/" },
-      { title: "Music Festivals: What to Bring", url: "https://officialgf.com/2025/07/22/what-to-bring/" },
-      { title: "Recs", url: "https://officialgf.com/category/recommendations/" },
-      { title: "Best Bassists in Japan", url: "https://officialgf.com/2026/03/07/5-japanese-bassists-you-should-know/" }
+
+      {
+        title: "All About Funk and City Pop",
+        url: "https://officialgf.com/2025/04/10/japan-soul/"
+      },
+
+      {
+        title: "My Favorite Underrated Artist",
+        url: "https://officialgf.com/2025/05/15/ako-japans-most-underrated-pop-artist-in-2025/"
+      },
+
+      {
+        title: "Faceless Singers",
+        url: "https://officialgf.com/2025/08/07/faceless-singers/"
+      },
+
+      {
+        title: "Music Festivals: What to Bring",
+        url: "https://officialgf.com/2025/07/22/what-to-bring/"
+      },
+
+      {
+        title: "Recs",
+        url: "https://officialgf.com/category/recommendations/"
+      },
+
+      {
+        title: "Best Bassists in Japan",
+        url: "https://officialgf.com/2026/03/07/5-japanese-bassists-you-should-know/"
+      }
+
     ];
 
     function ofgfRandomPick(event) {
-      const pick = ofgfRandomLinks[Math.floor(Math.random() * ofgfRandomLinks.length)];
-      const result = document.getElementById("ofgf-random-result");
+
+      const pick =
+        ofgfRandomLinks[
+          Math.floor(Math.random() * ofgfRandomLinks.length)
+        ];
+
+      const result =
+        document.getElementById("ofgf-random-result");
 
       result.style.display = "block";
-      result.innerHTML = `✦ Random pick: <a href="${pick.url}" target="_top">${pick.title} →</a>`;
+
+      result.innerHTML = `
+        ✦ Random pick:
+        <span
+          class="ofgf-random-link"
+          onclick="window.top.location.href='${pick.url}'"
+        >
+          ${pick.title} →
+        </span>
+      `;
 
       ofgfSparkleBurst(event);
     }
 
-    document.querySelectorAll(".ofgf-icon-btn").forEach(function(button) {
-      button.addEventListener("click", function(event) {
-        ofgfSparkleBurst(event);
+    document
+      .querySelectorAll(".ofgf-icon-btn")
+      .forEach(function(button) {
+
+        button.addEventListener(
+          "click",
+          function(event) {
+            ofgfSparkleBurst(event);
+          }
+        );
+
       });
-    });
 
     function ofgfSparkleBurst(event) {
-      const button = event.currentTarget;
-      const rect = button.getBoundingClientRect();
+
+      const button =
+        event.currentTarget;
+
+      const rect =
+        button.getBoundingClientRect();
 
       for (let i = 0; i < 8; i++) {
-        const sparkle = document.createElement("span");
-        sparkle.className = "ofgf-click-sparkle";
 
-        sparkle.style.left = event.clientX - rect.left + "px";
-        sparkle.style.top = event.clientY - rect.top + "px";
-        sparkle.style.setProperty("--x", (Math.random() * 70 - 35) + "px");
-        sparkle.style.setProperty("--y", (Math.random() * -70 - 10) + "px");
+        const sparkle =
+          document.createElement("span");
+
+        sparkle.className =
+          "ofgf-click-sparkle";
+
+        sparkle.style.left =
+          event.clientX - rect.left + "px";
+
+        sparkle.style.top =
+          event.clientY - rect.top + "px";
+
+        sparkle.style.setProperty(
+          "--x",
+          (Math.random() * 70 - 35) + "px"
+        );
+
+        sparkle.style.setProperty(
+          "--y",
+          (Math.random() * -70 - 10) + "px"
+        );
 
         button.appendChild(sparkle);
 
         setTimeout(function() {
           sparkle.remove();
         }, 700);
+
       }
+
     }
+
   </script>
+
 </div>
